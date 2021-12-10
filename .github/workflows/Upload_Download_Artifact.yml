@@ -17,11 +17,11 @@ jobs:
     name: Download Artifact
     runs-on: ubuntu-latest
     steps:
+      - name: Download output file
+        uses: actions/dwnload-artifact@v2
+        with:
+          name: output-log-file
       - shell: bash
         run: |
           expr < output.log
           print expr
-      - name: Download output file
-        uses: actions/download-artifact@v2
-        with:
-          name: output-log-file
