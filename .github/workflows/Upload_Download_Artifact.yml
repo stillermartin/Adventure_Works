@@ -22,4 +22,8 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: output-log-file
+          path: output.log 
+      - shell: bash
+        run: |
+          expr Expr < output.log
 
