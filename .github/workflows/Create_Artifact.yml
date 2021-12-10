@@ -1,7 +1,7 @@
 name: Create Artifact
 on: [push]
 jobs:
-  example-job:
+  Creates-Artifact:
     name: Save output
     runs-on: ubuntu-latest
     steps:
