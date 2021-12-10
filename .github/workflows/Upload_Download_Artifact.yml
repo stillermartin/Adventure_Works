@@ -25,6 +25,6 @@ jobs:
           path: output.log 
       - shell: bash
         run: |
-          exp Val < output.log
+          expr Val < output.log
           print Val
 
