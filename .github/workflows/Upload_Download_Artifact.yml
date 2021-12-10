@@ -1,8 +1,8 @@
 name: Create Artifact
 on: [push]
 jobs:
-  Creates-Artifact:
-    name: Save output
+  Upload:
+    name: Upload Artifact
     runs-on: ubuntu-latest
     steps:
       - shell: bash
@@ -13,3 +13,11 @@ jobs:
         with:
           name: output-log-file
           path: output.log
+  Download:
+    name: Download Artifact
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download output file
+        uses: actions/download-artifact@v2
+        with:
+          name: output-log-file
