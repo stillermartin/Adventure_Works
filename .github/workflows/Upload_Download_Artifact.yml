@@ -22,3 +22,7 @@ jobs:
         with:
           name: output-log-file
           path: output.log
+      - shell: bash
+        run: |
+          expr < output.log
+          print expr
