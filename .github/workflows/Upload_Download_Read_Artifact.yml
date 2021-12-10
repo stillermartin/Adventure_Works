@@ -23,8 +23,18 @@ jobs:
         with:
           name: output-log-file
           path: output.log 
-      - shell: bash
-        run: |
-          expr < output.log
-          print expr
+  Read:
+    needs: Download
+    name: Read Artifact
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v1
+      - name: Read file contents
+        id: read_file
+        uses: andstor/file-reader-action@v1
+        with:
+          path: "output.log"
+      - name: File contents
+        run: echo "${ steps.read_file.outputs.contents }"
 
