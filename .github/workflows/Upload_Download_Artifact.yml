@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download output file
-        uses: actions/dwnload-artifact@v2
+        uses: actions/download-artifact@v2
         with:
           name: output-log-file
       - shell: bash
